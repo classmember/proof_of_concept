@@ -2,6 +2,7 @@
 '''
 answer() - answers riddle
     
+:see: https://imgur.com/r/funny/WKdg6BN
 :example:
     >>> print answer()
     one fifths, two fifths, red fifths, blue fifths.
