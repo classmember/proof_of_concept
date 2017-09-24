@@ -3,8 +3,13 @@
 #include <string>
 #include <regex>
 
-//
-//
+/**
+ * compile:
+ * g++ -g regex_test.cpp -o regex_test 
+ *
+ * run:
+ * ./regex_test
+ */
 
 int main ()
 {
