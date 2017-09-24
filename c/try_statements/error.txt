@@ -1,0 +1,2 @@
+[caught exception] std::out_of_range -- 
+    'vector::_M_range_check: __n (which is 10) >= this->size() (which is 4)'

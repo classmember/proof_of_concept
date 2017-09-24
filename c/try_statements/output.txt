@@ -1,0 +1,12 @@
+test_vector.front() = 
+test_vector.size() = 7
+test_vector.front() = a1
+test_vector.back() = mean?
+test_vector.empty() = 0
+test_vector[0] = a1
+test_vector[1] = b2
+test_vector[2] = c3
+test_vector[3] = d4
+test_vector[4] = This is a test
+test_vector[5] = nah
+test_vector[6] = mean?
