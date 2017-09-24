@@ -1,13 +1,14 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <regex>
 
 /**
  * compile:
- * g++ -g strip_ip_addresses.cpp -o strip_ip_addresses
+ * g++ -O2 strip_ip_addresses_from_file.cpp -o scrape_ip
  *
  * run:
- * ./strip_ip_addresses
+ * ./scrape_ip source_text.txt
  */
 
 /**
@@ -21,15 +22,26 @@
  * @see https://www.regular-expressions.info/ip.html
  */
 
-int main ()
+
+int main (int argc, char *argv[])
 {
+    const std::string usage ("Usage: scrape_ip [FILE]\n");
+    std::ifstream input_file("source_text.txt");
+
+    // make sure user provided an argument
+    if ( argc != 2 ) {
+        std::cout << usage;
+        return 255;
+    }
+
+    // open file and read into string
     std::string source_text (
-        "  This is an IP address: 100.4.102.154.\n"
-        "  Here is another: 12.34.56.78\n"
-        "  3.147.12.42 - another\n");
+        (std::istreambuf_iterator<char>(input_file)),
+        std::istreambuf_iterator<char>());
+
     std::smatch matches;
     std::regex ip_address_pattern (
-                   "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\."
+               "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\."
                    "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\."
                    "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\."
                    "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b");
