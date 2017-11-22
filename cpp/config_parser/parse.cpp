@@ -1,0 +1,14 @@
+/**
+ * Example to parse:
+ *
+ * # Environment variables used as expansion symbol
+ * # Note: symbol names are case sensitive
+ * tempFolder = %TEMP%
+ * 
+ * # already defined variables used as expansion symbol
+ * tempSubFolder = %tempFolder%\config-demo
+ * 
+**/
+
+#include <string.h>
+
