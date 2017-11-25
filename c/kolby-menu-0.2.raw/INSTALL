@@ -1,0 +1,8 @@
+#!/usr/sh
+# Typical install:
+autoscan
+autoconf
+autoreconf --install
+./configure
+make
+make install

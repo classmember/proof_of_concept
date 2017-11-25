@@ -1,0 +1,27 @@
+# installation
+./configure           # creates Makefile
+make                  # creates menu
+make install          # installs package locally
+
+# configuring package directory for build on local environment
+autoscan              # creates autoscan.log and configure.scan
+mv configure.scan configure.ac
+aclocal               # creates autom4te.cache
+
+# kill these lines in configure.ac
+AC_INIT
+AM_INIT_AUTOMAKE
+
+# replace with these in configure.ac
+AC_INIT([kolby-menu], [0.1])
+AC_CONFIG_SRCDIR([main.c])
+AM_INIT_AUTOMAKE
+AC_CONFIG_FILES([Makefile]) 
+
+automake              # creates automake.in
+autoconf              # creates configure
+autoreconf --install  # creates config.h.in
+
+# clear logs and cache
+rm autoscan.log
+rm -rf autom4te.cache/
