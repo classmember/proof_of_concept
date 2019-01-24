@@ -27,7 +27,7 @@ mov byte[swap], 1        ;; set swap to 1
 
 noSwap:
 add bx, 2                ;; add 2 to bx register
-cmp bx, 18               ;; check if bx register 
+cmp bx, 18               ;; check if bx register is greater than 18
 jnz comparison           ;; jz means jump if first number is greater than second number
 
 end:
